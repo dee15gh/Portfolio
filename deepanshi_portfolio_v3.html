@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deepanshi Sachdeva — Marketing, Strategy & AI Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --coral:#FF6B5B; --amber:#FFAA3B; --mint:#3ECFB2; --sky:#4DB8FF;
+  --lilac:#B48EFF; --rose:#FF8FAB; --sage:#6BCB8B;
+  --ink:#1A1A2E; --soft:#F7F4EF; --card:#FFFFFF;
+}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--soft);color:var(--ink);}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(26,26,46,0.96);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:14px 40px;}
+.nav-name{font-family:'Fraunces',serif;font-size:18px;color:#fff;letter-spacing:0.5px;}
+.nav-links{display:flex;gap:28px;}
+.nav-links a{font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--amber);}
+
+/* HERO */
+.hero{background:linear-gradient(140deg,#1A1A2E 0%,#2D2B55 55%,#1A1A2E 100%);padding:90px 40px 80px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 60%,rgba(62,207,178,.18) 0%,transparent 55%),radial-gradient(ellipse at 80% 25%,rgba(255,107,91,.16) 0%,transparent 55%),radial-gradient(ellipse at 55% 80%,rgba(180,142,255,.12) 0%,transparent 50%);}
+.hero>*{position:relative;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.85);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:7px 20px;border-radius:40px;margin-bottom:28px;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(42px,7vw,82px);color:#fff;line-height:1.0;margin-bottom:10px;}
+.hero h1 .gold{color:var(--amber);}
+.hero h1 .italic{font-style:italic;color:var(--mint);}
+.hero-role{font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:28px;letter-spacing:1px;font-weight:500;}
+.hero-bio{font-size:15px;color:rgba(255,255,255,0.65);max-width:580px;margin:0 auto 40px;line-height:1.75;}
+.hero-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:44px;}
+.pill{padding:8px 18px;border-radius:40px;font-size:11.5px;font-weight:700;border:1.5px solid;letter-spacing:0.5px;}
+.hero-contact{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;}
+.hero-contact a,.hero-contact span{font-size:12px;color:rgba(255,255,255,0.45);font-weight:600;text-decoration:none;letter-spacing:0.5px;transition:color .2s;}
+.hero-contact a:hover{color:var(--amber);}
+
+/* STAT STRIP */
+.stat-strip{background:linear-gradient(90deg,var(--coral),var(--amber),var(--mint),var(--sky),var(--lilac));padding:3px 0;}
+.stat-strip-inner{background:var(--ink);display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:8px;padding:30px 40px;}
+.stat-item{text-align:center;}
+.stat-item .big{font-family:'Fraunces',serif;font-size:36px;font-weight:900;line-height:1;}
+.stat-item .lbl{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-top:5px;color:rgba(255,255,255,.5);}
+
+/* SECTION */
+.section{padding:72px 40px;max-width:1180px;margin:0 auto;}
+.section-label{font-size:10.5px;font-weight:800;letter-spacing:3.5px;text-transform:uppercase;margin-bottom:10px;}
+.section-title{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,46px);line-height:1.1;margin-bottom:10px;}
+.section-sub{font-size:14px;color:#666;margin-bottom:44px;line-height:1.7;max-width:560px;}
+
+/* EXPERTISE — 3 STANDOUT CARDS */
+.standout-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.standout-card{border-radius:22px;padding:34px 30px;position:relative;overflow:hidden;}
+.standout-card .num{font-family:'Fraunces',serif;font-size:80px;font-weight:900;opacity:.1;position:absolute;bottom:-10px;right:16px;line-height:1;}
+.standout-card h3{font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:16px;}
+.standout-card ul{list-style:none;padding:0;}
+.standout-card ul li{font-size:13px;line-height:1.65;margin-bottom:6px;padding-left:18px;position:relative;}
+.standout-card ul li::before{content:'→';position:absolute;left:0;font-weight:800;}
+.standout-card p{font-size:13px;line-height:1.75;}
+.c1{background:linear-gradient(135deg,#FFF0ED,#FFD9D3);color:#7A1A0A;}
+.c2{background:linear-gradient(135deg,#FFF8E6,#FFE8A3);color:#6B4500;}
+.c3{background:linear-gradient(135deg,#E8F5FF,#B8DAFF);color:#0A2A5A;}
+
+/* 8 FUNCTIONS */
+.fn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.fn-card{background:var(--card);border-radius:20px;padding:28px 20px;text-align:center;box-shadow:0 2px 18px rgba(0,0,0,.06);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
+.fn-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,.1);}
+.fn-num{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;margin:0 auto 16px;color:#fff;}
+.fn-card h4{font-size:13px;font-weight:700;line-height:1.45;color:var(--ink);}
+.fn-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;border-radius:0 0 20px 20px;}
+.f1::after{background:var(--coral);} .f1 .fn-num{background:var(--coral);}
+.f2::after{background:var(--amber);} .f2 .fn-num{background:var(--amber);}
+.f3::after{background:var(--mint);}  .f3 .fn-num{background:var(--mint);}
+.f4::after{background:var(--sky);}   .f4 .fn-num{background:var(--sky);}
+.f5::after{background:var(--lilac);} .f5 .fn-num{background:var(--lilac);}
+.f6::after{background:var(--rose);}  .f6 .fn-num{background:var(--rose);}
+.f7::after{background:var(--sage);}  .f7 .fn-num{background:var(--sage);}
+.f8::after{background:var(--amber);} .f8 .fn-num{background:var(--amber);}
+
+/* AGENCY CARDS */
+.agencies-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.agency-card{background:var(--card);border-radius:20px;padding:28px 26px;box-shadow:0 4px 20px rgba(0,0,0,.06);display:flex;gap:18px;align-items:flex-start;}
+.agency-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;margin-top:5px;}
+.agency-info h4{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:4px;}
+.agency-info .role{font-size:12px;font-weight:600;color:#888;margin-bottom:10px;}
+.agency-info p{font-size:12.5px;color:#555;line-height:1.65;}
+
+/* CASE STUDIES */
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.case-card{border-radius:22px;padding:36px 32px;position:relative;overflow:hidden;}
+.case-card .case-num{font-family:'Fraunces',serif;font-size:90px;font-weight:900;opacity:.08;position:absolute;top:0;right:20px;line-height:1;}
+.case-card .case-tag{display:inline-flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;}
+.case-card .tag{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px;}
+.case-card h3{font-size:22px;font-weight:800;margin-bottom:6px;line-height:1.2;}
+.case-card .case-agency{font-size:11px;font-weight:600;opacity:.65;margin-bottom:20px;letter-spacing:.5px;}
+.case-card .metrics{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0;}
+.metric-box{text-align:center;min-width:72px;}
+.metric-box .m-num{font-family:'Fraunces',serif;font-size:22px;font-weight:900;line-height:1;}
+.metric-box .m-lbl{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.7;margin-top:2px;}
+.case-card .steps{margin-top:14px;}
+.case-card .step{font-size:12.5px;line-height:1.65;margin-bottom:8px;padding-left:16px;position:relative;}
+.case-card .step::before{content:'◆';position:absolute;left:0;font-size:7px;top:5px;}
+
+/* Philips full-width case card */
+.case-full{border-radius:22px;padding:40px 36px;position:relative;overflow:hidden;background:var(--ink);color:#fff;margin-bottom:22px;}
+.case-full .case-num{font-family:'Fraunces',serif;font-size:120px;font-weight:900;opacity:.06;position:absolute;top:-10px;right:20px;line-height:1;}
+.case-full .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;}
+.pillar{background:rgba(255,255,255,.07);border-radius:14px;padding:20px 18px;}
+.pillar h5{font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.pillar p{font-size:12px;line-height:1.65;color:rgba(255,255,255,.78);}
+.pillar ul{list-style:none;padding:0;}
+.pillar ul li{font-size:12px;line-height:1.6;color:rgba(255,255,255,.78);margin-bottom:5px;padding-left:14px;position:relative;}
+.pillar ul li::before{content:'→';position:absolute;left:0;font-size:10px;color:var(--mint);}
+.case-full .metrics-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px;}
+.case-full .m-box{background:rgba(255,255,255,.09);border-radius:12px;padding:16px 20px;text-align:center;flex:1;min-width:100px;}
+.case-full .m-box .m-num{font-family:'Fraunces',serif;font-size:26px;font-weight:900;color:var(--amber);line-height:1;}
+.case-full .m-box .m-lbl{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:4px;}
+.case-full .bu-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+.bu-tag{background:rgba(62,207,178,.15);color:var(--mint);border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:0.5px;}
+
+/* Dark case card */
+.case-dark{background:var(--ink);color:#fff;}
+.case-dark .tag{background:rgba(255,170,59,.2);color:var(--amber);}
+.case-dark .step{color:rgba(255,255,255,.8);}
+.case-dark .m-num{color:var(--amber);}
+.case-coral{background:linear-gradient(135deg,#FFF0ED,#FFD9D3);color:#5A1A0A;}
+.case-coral .tag{background:rgba(255,107,91,.18);color:#C0390A;}
+.case-coral .m-num{color:var(--coral);}
+.case-mint{background:linear-gradient(135deg,#E8FFF8,#B8F2E6);color:#0A4A3A;}
+.case-mint .tag{background:rgba(62,207,178,.2);color:#0A7A60;}
+.case-mint .m-num{color:#0A9A7A;}
+.case-sky{background:linear-gradient(135deg,#E8F4FF,#B8DAFF);color:#0A254A;}
+.case-sky .tag{background:rgba(77,184,255,.2);color:#0A6AAA;}
+.case-sky .m-num{color:var(--sky);}
+
+/* WORK CARDS */
+.work-bg{background:#fff;padding:72px 0;}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.work-card{background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 4px 22px rgba(0,0,0,.07);transition:transform .22s,box-shadow .22s;display:flex;flex-direction:column;}
+.work-card:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(0,0,0,.12);}
+.work-top{height:5px;}
+.work-body{padding:24px 24px 20px;flex:1;display:flex;flex-direction:column;}
+.work-brand{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.work-card h4{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.4;}
+.work-card p{font-size:12.5px;color:#555;line-height:1.7;flex:1;}
+.work-result{font-size:11px;font-weight:800;margin-top:14px;padding:8px 14px;border-radius:10px;display:inline-block;letter-spacing:0.3px;}
+
+/* CLIENT LOGO WALL */
+.clients-section{background:var(--soft);padding:64px 40px;text-align:center;}
+.clients-wall{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;max-width:1000px;margin:0 auto;}
+.client-logo-box{
+  background:var(--card);
+  border:1.5px solid #E8E4DE;
+  border-radius:16px;
+  width:140px; height:80px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 10px rgba(0,0,0,.06);
+  transition:transform .15s,box-shadow .15s;
+  padding:12px 10px;
+  overflow:hidden;
+}
+.client-logo-box:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.1);}
+.client-logo-box svg{max-width:110px;max-height:54px;width:auto;height:auto;}
+.brand-name-fallback{font-size:12px;font-weight:800;color:var(--ink);text-align:center;line-height:1.3;}
+
+/* FOOTER */
+footer{background:#0D0D1A;padding:48px 40px;text-align:center;}
+.footer-name{font-family:'Fraunces',serif;font-size:28px;color:#fff;margin-bottom:8px;}
+.footer-role{font-size:12px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;}
+.footer-contact{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:32px;}
+.footer-contact a,.footer-contact span{font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;font-weight:600;}
+.footer-contact a:hover{color:var(--amber);}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.2);}
+
+@media(max-width:900px){
+  .standout-grid,.agencies-grid,.case-grid,.work-grid{grid-template-columns:1fr;}
+  .fn-grid{grid-template-columns:repeat(2,1fr);}
+  .case-full .pillar-grid{grid-template-columns:1fr;}
+  .section{padding:48px 20px;}
+  nav{padding:12px 20px;}
+  .nav-links{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-name">Deepanshi Sachdeva</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#cases">Case Studies</a>
+    <a href="#brands">Brands</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="about">
+  <div class="hero-eyebrow">✦ Marketing, Strategy & AI Portfolio</div>
+  <h1>
+    Brand Narrative.<br>
+    <span class="gold">Creator Ecosystems.</span><br>
+    <span class="italic">Measurable Impact.</span>
+  </h1>
+  <p class="hero-role">PR · Influencer Marketing · Experiential · Account Management · AI Tools</p>
+  <p class="hero-bio">3+ years building integrated marketing campaigns for premium consumer, lifestyle, beauty, and tech brands at FleishmanHillard (Omnicom) and 20:20 MSL (Publicis Groupe). Known for 100% client retention, precision execution, and campaigns that actually move numbers.</p>
+  <div class="hero-pills">
+    <div class="pill" style="color:var(--coral);border-color:var(--coral);">Lifestyle & Beauty</div>
+    <div class="pill" style="color:var(--amber);border-color:var(--amber);">PR Strategy</div>
+    <div class="pill" style="color:var(--mint);border-color:var(--mint);">Influencer Marketing</div>
+    <div class="pill" style="color:var(--sky);border-color:var(--sky);">Experiential</div>
+    <div class="pill" style="color:var(--lilac);border-color:var(--lilac);">Consumer Tech</div>
+    <div class="pill" style="color:var(--rose);border-color:var(--rose);">Account Management</div>
+    <div class="pill" style="color:var(--sage);border-color:var(--sage);">AI & Marketing Tech</div>
+  </div>
+  <div class="hero-contact">
+    <span>📍 Delhi, India</span>
+    <a href="mailto:Dsachdeva015@gmail.com">Dsachdeva015@gmail.com</a>
+    <span>+91-8791623345</span>
+    <span>MBA Finance & Marketing · Amity University · 2024–26</span>
+  </div>
+</section>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div class="stat-item"><div class="big" style="color:var(--coral);">15+</div><div class="lbl" style="color:rgba(255,255,255,.5);">Brands Worked With</div></div>
+    <div class="stat-item"><div class="big" style="color:var(--amber);">100%</div><div class="lbl" style="color:rgba(255,255,255,.5);">Client Retention</div></div>
+    <div class="stat-item"><div class="big" style="color:var(--mint);">2.4B+</div><div class="lbl" style="color:rgba(255,255,255,.5);">Reach — 1 Saudi Experiential</div></div>
+    <div class="stat-item"><div class="big" style="color:var(--sky);">103</div><div class="lbl" style="color:rgba(255,255,255,.5);">Tier-1 Lifestyle Coverages (8 Months)</div></div>
+    <div class="stat-item"><div class="big" style="color:var(--lilac);">1,050+</div><div class="lbl" style="color:rgba(255,255,255,.5);">Exposures — 1 RE Launch</div></div>
+  </div>
+</div>
+
+<!-- WHAT I DO -->
+<div class="section" id="work">
+  <div class="section-label" style="color:var(--mint);">Capabilities</div>
+  <h2 class="section-title">What I Do</h2>
+  <p class="section-sub">Eight marketing functions owned end-to-end — from strategy to post-campaign reporting.</p>
+  <div class="fn-grid">
+    <div class="fn-card f1"><div class="fn-num">1</div><h4>Brand & PR Strategy</h4></div>
+    <div class="fn-card f2"><div class="fn-num">2</div><h4>Influencer & Creator Marketing</h4></div>
+    <div class="fn-card f3"><div class="fn-num">3</div><h4>Experiential & Events</h4></div>
+    <div class="fn-card f4"><div class="fn-num">4</div><h4>Client & Account Management</h4></div>
+    <div class="fn-card f5"><div class="fn-num">5</div><h4>Campaign Execution & Reporting</h4></div>
+    <div class="fn-card f6"><div class="fn-num">6</div><h4>Market Research & Consumer Insights</h4></div>
+    <div class="fn-card f7"><div class="fn-num">7</div><h4>Agency & Vendor Management</h4></div>
+    <div class="fn-card f8"><div class="fn-num">8</div><h4>GTM Planning & Media Strategy</h4></div>
+  </div>
+</div>
+
+<!-- THE DEEPANSHI DIFFERENCE -->
+<div class="section" style="padding-top:0;">
+  <div class="section-label" style="color:var(--coral);">What Sets Me Apart</div>
+  <h2 class="section-title">The Deepanshi Difference</h2>
+  <p class="section-sub">Skills, tools, and instinct — working together.</p>
+  <div class="standout-grid">
+    <div class="standout-card c1">
+      <div class="num">1</div>
+      <h3>The Skills</h3>
+      <ul>
+        <li>Brand narrative development</li>
+        <li>Multi-brand portfolio management</li>
+        <li>Creator strategy & briefing</li>
+        <li>Campaign planning & execution</li>
+        <li>Stakeholder management</li>
+      </ul>
+    </div>
+    <div class="standout-card c2">
+      <div class="num">2</div>
+      <h3>The Tools</h3>
+      <ul>
+        <li>Google Analytics · Meltwater · Looker Studio</li>
+        <li>Salesforce · Monday.com · HubSpot</li>
+        <li>Qoruz · CisionOne</li>
+        <li>Google Ad Manager · Meta Ads</li>
+        <li>Power BI · SQL</li>
+        <li>Canva · MS Office · Google Workspace</li>
+      </ul>
+    </div>
+    <div class="standout-card c3">
+      <div class="num">3</div>
+      <h3>The Instinct</h3>
+      <p>I go beyond follower counts — matching brand positioning to creator aesthetics, tone, and community trust before anything else. I understand what a brand needs before it needs to ask.</p>
+    </div>
+  </div>
+</div>
+
+<!-- AGENCY EXPERIENCE -->
+<div class="section" style="padding-top:0;" id="cases">
+  <div class="section-label" style="color:var(--sky);">Where I've Worked</div>
+  <h2 class="section-title">Agency Experience</h2>
+  <p class="section-sub">Two of the world's most demanding PR environments — back to back.</p>
+  <div class="agencies-grid">
+    <div class="agency-card">
+      <div class="agency-dot" style="background:var(--coral);"></div>
+      <div class="agency-info">
+        <h4>FleishmanHillard, Omnicom Group</h4>
+        <div class="role">Senior Account Executive — Account Management · Nov 2025–Present</div>
+        <p>Managing Philips Personal Care, Stellantis (Jeep & Citroën), IB, Canva, and Contitech. Own GTM strategy, campaign calendars, influencer programmes, and client reporting. 100% new business conversion on pitches to date.</p>
+      </div>
+    </div>
+    <div class="agency-card">
+      <div class="agency-dot" style="background:var(--mint);"></div>
+      <div class="agency-info">
+        <h4>20:20 MSL, Publicis Groupe</h4>
+        <div class="role">Executive & Associate — PR & Campaign Management · Jun 2023–Nov 2024</div>
+        <p>Managed 6+ brands simultaneously — Saudi Tourism Authority, Visit Dubai, Royal Enfield, Haier, Usha Electronics, UPES. 100% client retention. 30–50% increase in lead growth. Delivered 2.4B+ reach on Spectacular Saudi.</p>
+      </div>
+    </div>
+    <div class="agency-card">
+      <div class="agency-dot" style="background:var(--amber);"></div>
+      <div class="agency-info">
+        <h4>Swift Money.AI — Founder's Office</h4>
+        <div class="role">Brand & Strategy Lead (Freelance) · Dec 2024–Sep 2025</div>
+        <p>Worked directly with the CEO on brand positioning and growth initiatives. Redesigned product messaging driving 60%+ engagement uplift. Managed AMC partnerships with HDFC, ICICI, and Axis Bank — customer retention lifted to ~99%.</p>
+      </div>
+    </div>
+    <div class="agency-card">
+      <div class="agency-dot" style="background:var(--lilac);"></div>
+      <div class="agency-info">
+        <h4>Orange Events & Partners</h4>
+        <div class="role">Project & Event Coordinator (Freelance) · Sep 2022–Jun 2023</div>
+        <p>End-to-end logistics, vendor coordination, and on-ground execution for large-scale government and corporate events. Zero critical failures across all mandates.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CASE STUDIES -->
+<div class="work-bg">
+<div class="section" style="padding-top:72px;padding-bottom:72px;">
+  <div class="section-label" style="color:var(--coral);">Case Studies</div>
+  <h2 class="section-title">Flagship Work</h2>
+  <p class="section-sub">Four mandates. Four categories. One consistent outcome — results that matter.</p>
+
+  <!-- PHILIPS INDIA — FULL WIDTH FEATURED CARD -->
+  <div class="case-full">
+    <div class="case-num">01</div>
+    <div class="case-tag" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
+      <span class="tag" style="background:rgba(255,170,59,.2);color:var(--amber);border-radius:20px;padding:5px 12px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;">Lifestyle & Beauty</span>
+      <span class="tag" style="background:rgba(62,207,178,.15);color:var(--mint);border-radius:20px;padding:5px 12px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;">Grooming</span>
+      <span class="tag" style="background:rgba(180,142,255,.15);color:var(--lilac);border-radius:20px;padding:5px 12px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;">Corporate Reputation</span>
+    </div>
+    <h3 style="font-size:28px;font-weight:800;margin-bottom:6px;line-height:1.15;color:#fff;">Philips Personal Care India</h3>
+    <div style="font-size:11px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:6px;letter-spacing:.5px;">FleishmanHillard, Omnicom Group · 2025–Present</div>
+    <p style="font-size:13.5px;color:rgba(255,255,255,.7);line-height:1.7;max-width:760px;margin-bottom:24px;">A full-stack Philips mandate spanning Corporate Reputation, Product PR, Campaign Amplification, and Category Leadership — across Beauty, Men's Grooming, and Personal Health BUs simultaneously.</p>
+
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h5>Corporate Reputation</h5>
+        <ul>
+          <li>Positioned Philips leadership as credible industry voices across consumer evolution, premiumisation & India growth narratives</li>
+          <li>Executed exclusive leadership interviews with top-tier business, financial & A&M publications — including PTI and Hindu Business Line</li>
+          <li>Hosted embargoed interviews pre-launch to build momentum; drove pre-event buzz, experiential activation & post-event amplification</li>
+          <li>6 spokesperson interviews organised across 3 financial + 3 A&M publications</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <h5>Product & Campaign PR</h5>
+        <ul>
+          <li>3-fold framework: Product launch visibility → Campaign & ambassador amplification → Sustained long-term visibility via special-day integrations, listicles & trend stories</li>
+          <li>Amplified ambassador associations: Rasha Thadani (Beauty), Ahaan Pandey (OneBlade), Yami Gautam Dhar (Avent)</li>
+          <li>Built OneBlade Intimate teaser campaign; reinforced 'Down There, Done Right' narrative across teaser → event → launch stages</li>
+          <li>5 media genres covered with personalised category narratives per BU</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <h5>Men's Grooming — Toxic Film Partnership</h5>
+        <ul>
+          <li>Philips as sponsorship partner for Toxic — onboarded Rocking Star Yash as Men's Grooming face</li>
+          <li>Launched Toxic × Trimmers ka Baap campaign with national press release across A&M, Entertainment & Mainstream media</li>
+          <li>Newswire distribution for wider syndication</li>
+          <li>E-commerce platform takeovers (Blinkit), advertisement boards & banners</li>
+          <li>Ecommerce takeovers + OOH advertising rollout</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="metrics-row">
+      <div class="m-box"><div class="m-num">103</div><div class="m-lbl">Total Coverages (8 mo)</div></div>
+      <div class="m-box"><div class="m-num">54.57Mn</div><div class="m-lbl">Total Reach</div></div>
+      <div class="m-box"><div class="m-num">28.5Mn</div><div class="m-lbl">PR Value</div></div>
+      <div class="m-box"><div class="m-num">63+</div><div class="m-lbl">BA Launch Coverages</div></div>
+      <div class="m-box"><div class="m-num">32+</div><div class="m-lbl">Media Interactions/Qtr</div></div>
+      <div class="m-box"><div class="m-num">1.4Bn+</div><div class="m-lbl">Est. Corporate Reach</div></div>
+      <div class="m-box"><div class="m-num">34 avg</div><div class="m-lbl">Launch Coverages Tier-1</div></div>
+      <div class="m-box"><div class="m-num">9+ avg</div><div class="m-lbl">Unique Features/Topical Day</div></div>
+    </div>
+
+    <div class="bu-row">
+      <span class="bu-tag">Philips Beauty</span>
+      <span class="bu-tag">Men's Grooming</span>
+      <span class="bu-tag">OneBlade</span>
+      <span class="bu-tag">Philips Avent</span>
+      <span class="bu-tag">Corporate Reputation</span>
+      <span class="bu-tag">Vogue · Elle · Grazia · Femina · Mashable · HT · Moneycontrol</span>
+    </div>
+  </div>
+
+  <!-- 3 REMAINING CASE STUDIES GRID -->
+  <div class="case-grid">
+
+    <!-- Saudi Tourism -->
+    <div class="case-card case-coral">
+      <div class="case-num">02</div>
+      <div class="case-tag">
+        <span class="tag">Experiential</span>
+        <span class="tag" style="background:rgba(180,142,255,.18);color:#6B3FBF;">Travel & Lifestyle</span>
+      </div>
+      <h3>Saudi Tourism Authority</h3>
+      <div class="case-agency">20:20 MSL, Publicis · 2023–2024</div>
+      <div class="metrics">
+        <div class="metric-box"><div class="m-num" style="color:var(--coral);">2.4B+</div><div class="m-lbl">Total Reach</div></div>
+        <div class="metric-box"><div class="m-num" style="color:var(--coral);">20M+</div><div class="m-lbl">PR Value</div></div>
+        <div class="metric-box"><div class="m-num" style="color:var(--coral);">Tier-1</div><div class="m-lbl">Coverage</div></div>
+      </div>
+      <div class="steps">
+        <div class="step">Spectacular Saudi — celebrity red carpet & experiential showcase: Bollywood talent coordination</div>
+        <div class="step">Managed full activation: logistics, vendor coordination, production, and global reporting</div>
+        <div class="step">Live social amplification across entertainment, lifestyle & travel press</div>
+        <div class="step">100% client retention across multi-quarter Visit Dubai & Saudi mandates</div>
+      </div>
+    </div>
+
+    <!-- Royal Enfield -->
+    <div class="case-card case-mint">
+      <div class="case-num">03</div>
+      <div class="case-tag">
+        <span class="tag">Lifestyle Automotive</span>
+        <span class="tag" style="background:rgba(107,203,139,.2);color:#2A7A4A;">Product Launch</span>
+      </div>
+      <h3>Royal Enfield</h3>
+      <div class="case-agency">20:20 MSL, Publicis · 2023–2024</div>
+      <div class="metrics">
+        <div class="metric-box"><div class="m-num" style="color:#0A9A7A;">1,050+</div><div class="m-lbl">Avg Exposures</div></div>
+        <div class="metric-box"><div class="m-num" style="color:#0A9A7A;">2</div><div class="m-lbl">Major Launches</div></div>
+        <div class="metric-box"><div class="m-num" style="color:#0A9A7A;">2</div><div class="m-lbl">Cultural IPs</div></div>
+      </div>
+      <div class="steps">
+        <div class="step">Bullet 350 & Shotgun 650 launches — 1,050+ avg exposures per campaign</div>
+        <div class="step">Motoverse: music & lifestyle festival — logistics, vendor, partner, media integration</div>
+        <div class="step">Royal Enfield GT Cup: motorsport brand experience — on-ground ownership</div>
+        <div class="step">30–50% increase in brand talkability via influencer & media outreach</div>
+      </div>
+    </div>
+
+    <!-- Jeep / Stellantis -->
+    <div class="case-card case-sky">
+      <div class="case-num">04</div>
+      <div class="case-tag">
+        <span class="tag">Automotive PR</span>
+        <span class="tag" style="background:rgba(180,142,255,.18);color:#0A4A9A;">Brand Strategy</span>
+      </div>
+      <h3>Jeep India — Stellantis</h3>
+      <div class="case-agency">FleishmanHillard · 2025–Present</div>
+      <div class="metrics">
+        <div class="metric-box"><div class="m-num" style="color:var(--sky);">3</div><div class="m-lbl">Nameplates</div></div>
+        <div class="metric-box"><div class="m-num" style="color:var(--sky);">4</div><div class="m-lbl">Big Campaigns</div></div>
+        <div class="metric-box"><div class="m-num" style="color:var(--sky);">6+</div><div class="m-lbl">Influencer Genres</div></div>
+      </div>
+      <div class="steps">
+        <div class="step">Shifted brand from launch-led to credibility-led PR — no new models in 2026</div>
+        <div class="step">Built influencer universe: Fashion / Lifestyle / Travel / Adventure / Photography / Auto</div>
+        <div class="step">Long-term reviews: Autocar, TopGear, EVO, Overdrive, HT Auto, AutoX</div>
+        <div class="step">Campaigns: "India on 4x4 — Freedom Lives Here" | "The Great Indian Trail" | "Timeless by Design"</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- BRAND HIGHLIGHT CARDS -->
+<div class="section" id="brands">
+  <div class="section-label" style="color:var(--amber);">Brand Highlights</div>
+  <h2 class="section-title">More Work Done</h2>
+  <p class="section-sub">Across grooming, consumer tech, and experiential — each brand a distinct world.</p>
+  <div class="work-grid">
+
+    <!-- Philips Men's Grooming — Toxic -->
+    <div class="work-card">
+      <div class="work-top" style="background:linear-gradient(90deg,var(--coral),var(--amber));"></div>
+      <div class="work-body">
+        <div class="work-brand" style="color:var(--coral);">Philips Men's Grooming</div>
+        <h4>Toxic Film Partnership — Rocking Star Yash × Trimmers ka Baap</h4>
+        <p>Philips as official sponsorship partner for the Toxic movie. Onboarded Rocking Star Yash as Men's Grooming face. Launched <strong>Toxic × Trimmers ka Baap</strong> campaign — national PR dissemination across A&M, Entertainment & Mainstream media, plus newswire syndication. Ecommerce takeovers on Blinkit, OOH advertisement boards & banners. 6 spokesperson interviews with financial + A&M publications covering both business narrative and Philips' marketing playbook.</p>
+        <div class="work-result" style="background:#FFF0ED;color:#C0392B;">National PR · Blinkit Takeover · OOH · 6 Spokesperson Interviews</div>
+      </div>
+    </div>
+
+    <!-- OneBlade Show Don't Tell -->
+    <div class="work-card">
+      <div class="work-top" style="background:linear-gradient(90deg,var(--lilac),var(--sky));"></div>
+      <div class="work-body">
+        <div class="work-brand" style="color:var(--lilac);">Philips OneBlade</div>
+        <h4>OneBlade "Show Don't Tell" — Product Experience Event</h4>
+        <p>Planned and executed a hands-on product experience event designed to let the product speak for itself. Managed media and influencer attendance, live demonstrations, real-time content generation, and seeding across platforms. Built phased media engagement across teaser → event → launch stages for the OneBlade Intimate launch reinforcing the 'Down There, Done Right' brand narrative.</p>
+        <div class="work-result" style="background:#F5EFFF;color:#6B3FBF;">Phased launch · Media + Influencer Coverage · Earned PR</div>
+      </div>
+    </div>
+
+    <!-- Haier Creator Ecosystem -->
+    <div class="work-card">
+      <div class="work-top" style="background:linear-gradient(90deg,var(--mint),var(--sky));"></div>
+      <div class="work-body">
+        <div class="work-brand" style="color:var(--mint);">Haier</div>
+        <h4>Tech Creator Ecosystem — Social Buzz & Reviews</h4>
+        <p>Built and managed a tech creator ecosystem for social buzz and product reviews. Sourced and briefed creators aligned to Haier's consumer tech positioning — matching brand identity to creator aesthetics, not just reach.</p>
+        <div class="work-result" style="background:#E8FFF8;color:#0A7A60;">Creator ecosystem · Social coverage · Product seeding</div>
+      </div>
+    </div>
+
+    <!-- Usha Electronics -->
+    <div class="work-card">
+      <div class="work-top" style="background:linear-gradient(90deg,var(--sky),var(--mint));"></div>
+      <div class="work-body">
+        <div class="work-brand" style="color:var(--sky);">Usha Electronics</div>
+        <h4>Integrated Communications — Multi-Quarter</h4>
+        <p>Managed integrated communication strategy for Usha Electronics as part of the Publicis Groupe mandate. Sustained brand visibility across consumer media and maintained 100% client retention across the engagement.</p>
+        <div class="work-result" style="background:#EBF5FF;color:#0A5A9A;">100% retention · Consumer media coverage</div>
+      </div>
+    </div>
+
+    <!-- Canva GTM -->
+    <div class="work-card">
+      <div class="work-top" style="background:linear-gradient(90deg,var(--rose),var(--coral));"></div>
+      <div class="work-body">
+        <div class="work-brand" style="color:var(--rose);">Canva India</div>
+        <h4>GTM Strategy — Messaging & Campaign Integration</h4>
+        <p>Driving GTM strategy for Canva at FleishmanHillard — aligning messaging with Indian market behaviour and consumer insights. Coordinating campaigns across creator, digital, PR, and experiential channels.</p>
+        <div class="work-result" style="background:#FFF0F4;color:#C0364E;">GTM alignment · Channel integration · India market</div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+<!-- CLIENTS — LOGO WALL -->
+<div class="clients-section" id="contact">
+  <div style="max-width:1180px;margin:0 auto;text-align:center;">
+    <div class="section-label" style="color:var(--coral);">Client Portfolio</div>
+    <h2 class="section-title">Brands I've Worked On</h2>
+    <p class="section-sub" style="margin:0 auto 48px;">Premium consumer, lifestyle, tech, and automotive brands — handled with the same precision and care.</p>
+    <div class="clients-wall">
+
+      <!-- PHILIPS -->
+      <div class="client-logo-box">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="80" fill="white"/>
+          <!-- Philips shield emblem simplified -->
+          <rect x="16" y="18" width="34" height="44" rx="17" fill="#003087"/>
+          <circle cx="33" cy="24" r="4" fill="white"/>
+          <circle cx="33" cy="40" r="4" fill="white"/>
+          <circle cx="33" cy="56" r="4" fill="white"/>
+          <text x="115" y="48" font-family="Arial,sans-serif" font-size="26" font-weight="bold" fill="#003087" text-anchor="middle">PHILIPS</text>
+        </svg>
+      </div>
+
+      <!-- SAUDI TOURISM AUTHORITY -->
+      <div class="client-logo-box">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="80" fill="white"/>
+          <rect x="0" y="0" width="200" height="80" fill="#1B6B3A"/>
+          <!-- Palm tree icon simplified -->
+          <text x="100" y="28" font-family="Arial,sans-serif" font-size="9.5" font-weight="bold" fill="#E8C84A" text-anchor="middle" letter-spacing="1">SAUDI TOURISM</text>
+          <text x="100" y="44" font-family="Arial,sans-serif" font-size="9.5" font-weight="bold" fill="#E8C84A" text-anchor="middle" letter-spacing="1">AUTHORITY</text>
+          <path d="M100 52 Q94 62 88 70 L112 70 Q106 62 100 52Z" fill="#E8C84A" opacity="0.6"/>
+          <line x1="100" y1="52" x2="100" y2="70" stroke="#E8C84A" stroke-width="2"/>
+        </svg>
+      </div>
+
+      <!-- ROYAL ENFIELD -->
+      <div class="client-logo-box">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="80" fill="#1A1A1A"/>
+          <text x="100" y="30" font-family="Georgia,Times New Roman,serif" font-size="13" font-weight="bold" fill="#C9A84C" text-anchor="middle" letter-spacing="1.5">ROYAL ENFIELD</text>
+          <line x1="25" y1="38" x2="175" y2="38" stroke="#C9A84C" stroke-width="1.5"/>
+          <!-- Gear/wheel motif -->
+          <circle cx="100" cy="56" r="10" fill="none" stroke="#C9A84C" stroke-width="2"/>
+          <circle cx="100" cy="56" r="3" fill="#C9A84C"/>
+          <line x1="100" y1="44" x2="100" y2="68" stroke="#C9A84C" stroke-width="1.5"/>
+          <line x1="88" y1="56" x2="112" y2="56" stroke="#C9A84C" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <!-- JEEP -->
+      <div class="client-logo-box">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="80" fill="white"/>
+          <!-- Jeep grille dots -->
+          <circle cx="62" cy="40" r="5" fill="#1A1A1A"/>
+          <circle cx="76" cy="40" r="5" fill="#1A1A1A"/>
+          <circle cx="90" cy="40" r="5" fill="#1A1A1A"/>
+          <circle cx="104" cy="40" r="5" fill="#1A1A1A"/>
+          <circle cx="118" cy="40" r="5" fill="#1A1A1A"/>
+          <circle cx="132" cy="40" r="5" fill="#1A1A1A"/>
+          <rect x="55" y="30" width="90" height="20" rx="4" fill="none" stroke="#1A1A1A" stroke-width="2.5"/>
+          <text x="100" y="66" font-family="Arial Black,Impact,sans-serif" font-size="16" font-weight="900" fill="#1A1A1A" text-anchor="middle" letter-spacing="3">JEEP</text>
+        </svg>
+      </div>
+
+      <!-- CITROËN -->
+      <div class="client-logo-box">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="80" fill="white"/>
+          <!-- Citroën chevrons -->
+          <polyline points="80,22 100,34 120,22" fill="none" stroke="#C8102E" stroke-width="6" stroke-linejoin="round"/>
+          <polyline points="80,34 100,46 120,34" fill="none" stroke="#C8102E" stroke-width="6" stroke-linejoin="round"/>
+          <text x="100" y="66" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#1A1A1A" text-anchor="middle" letter-spacing="2">CITROËN</text>
+        </svg>
+      </div>
+
+      <!-- CANVA -->
+      <div class="client-logo-box">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="80" fill="white"/>
+          <!-- Canva C circle icon -->
+          <circle cx="52" cy="40" r="22" fill="#7D2AE8"/>
+          <text x="52" y="47" font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle">C</text>
+          <text x="130" y="47" font-family="Arial,sans-serif" font-size="26" font-weight="bold" fill="#1A1A1A" text-anchor="middle">anva</text>
+        </svg>
+      </div>
+
+      <!-- VISIT DUBAI -->
+      <div class="client-logo-box">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="80" fill="#F5F0E8"/>
+          <!-- Burj Khalifa silhouette -->
+          <rect x="95" y="18" width="10" height="44" fill="#D4A017"/>
+          <rect x="90" y="30" width="20" height="32" fill="#D4A017"/>
+          <rect x="84" y="44" width="32" height="18" fill="#D4A017"/>
+          <text x="100" y="72" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#1A1A1A" text-anchor="middle" letter-spacing="1.5">VISIT DUBAI</text>
+        </svg>
+      </div>
+
+      <!-- HAIER -->
+      <div class="client-logo-box">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="80" fill="white"/>
+          <rect x="0" y="0" width="200" height="80" fill="#00529B"/>
+          <text x="100" y="50" font-family="Arial,sans-serif" font-size="34" font-weight="bold" fill="white" text-anchor="middle" letter-spacing="2">Haier</text>
+        </svg>
+      </div>
+
+      <!-- USHA ELECTRONICS -->
+      <div class="client-logo-box">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="80" fill="white"/>
+          <!-- Usha fan blade motif -->
+          <circle cx="40" cy="40" r="20" fill="#D4002A" opacity="0.1"/>
+          <path d="M40 20 Q50 30 40 40 Q30 30 40 20Z" fill="#D4002A"/>
+          <path d="M60 40 Q50 50 40 40 Q50 30 60 40Z" fill="#D4002A"/>
+          <path d="M40 60 Q30 50 40 40 Q50 50 40 60Z" fill="#D4002A"/>
+          <path d="M20 40 Q30 30 40 40 Q30 50 20 40Z" fill="#D4002A"/>
+          <circle cx="40" cy="40" r="5" fill="white"/>
+          <text x="128" y="36" font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="#D4002A" text-anchor="middle">USHA</text>
+          <text x="128" y="56" font-family="Arial,sans-serif" font-size="11" fill="#555" text-anchor="middle" letter-spacing="1">ELECTRONICS</text>
+        </svg>
+      </div>
+
+      <!-- UPES -->
+      <div class="client-logo-box">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="80" fill="white"/>
+          <!-- Shield crest -->
+          <path d="M30 18 L30 50 Q30 62 44 68 L50 70 L56 68 Q70 62 70 50 L70 18 Z" fill="#003F88"/>
+          <text x="50" y="50" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="white" text-anchor="middle">U</text>
+          <text x="130" y="36" font-family="Arial,sans-serif" font-size="26" font-weight="900" fill="#003F88" text-anchor="middle">UPES</text>
+          <text x="130" y="54" font-family="Arial,sans-serif" font-size="9.5" fill="#555" text-anchor="middle" letter-spacing="0.5">UNIVERSITY</text>
+        </svg>
+      </div>
+
+      <!-- CUMMINS -->
+      <div class="client-logo-box">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="80" fill="white"/>
+          <!-- C arc -->
+          <path d="M42 25 A20 20 0 1 0 42 55" fill="none" stroke="#DA291C" stroke-width="8" stroke-linecap="round"/>
+          <text x="128" y="47" font-family="Arial,sans-serif" font-size="17" font-weight="bold" fill="#1A1A1A" text-anchor="middle" letter-spacing="1">CUMMINS</text>
+        </svg>
+      </div>
+
+      <!-- IB (International Baccalaureate) -->
+      <div class="client-logo-box">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="80" fill="white"/>
+          <rect x="0" y="0" width="200" height="80" fill="#003A70"/>
+          <!-- Globe arc lines -->
+          <circle cx="50" cy="40" r="22" fill="none" stroke="#009FDA" stroke-width="2"/>
+          <ellipse cx="50" cy="40" rx="10" ry="22" fill="none" stroke="#009FDA" stroke-width="2"/>
+          <line x1="28" y1="40" x2="72" y2="40" stroke="#009FDA" stroke-width="2"/>
+          <text x="130" y="48" font-family="Arial,sans-serif" font-size="34" font-weight="bold" fill="white" text-anchor="middle">IB</text>
+        </svg>
+      </div>
+
+      <!-- CONTITECH -->
+      <div class="client-logo-box">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="80" fill="#FF6600"/>
+          <!-- Continental logo-inspired -->
+          <circle cx="30" cy="40" r="18" fill="white" opacity="0.25"/>
+          <circle cx="30" cy="40" r="10" fill="white" opacity="0.4"/>
+          <text x="118" y="47" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle" letter-spacing="1">CONTITECH</text>
+        </svg>
+      </div>
+
+      <!-- SWIFT MONEY.AI -->
+      <div class="client-logo-box">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="80" fill="#0D0D1A"/>
+          <!-- Lightning bolt -->
+          <polygon points="45,16 32,44 42,44 35,66 58,36 48,36 55,16" fill="#3ECFB2"/>
+          <text x="128" y="36" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#3ECFB2" text-anchor="middle">SWIFT MONEY</text>
+          <text x="128" y="54" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">.AI</text>
+        </svg>
+      </div>
+
+      <!-- BRITANNIA -->
+      <div class="client-logo-box">
+        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="80" fill="white"/>
+          <!-- Britannia crown motif -->
+          <path d="M70 32 L80 18 L90 28 L100 15 L110 28 L120 18 L130 32 Z" fill="#E3001B"/>
+          <rect x="70" y="32" width="60" height="6" fill="#E3001B"/>
+          <text x="100" y="62" font-family="Georgia,Times New Roman,serif" font-size="18" font-weight="bold" fill="#E3001B" text-anchor="middle" letter-spacing="1">BRITANNIA</text>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Deepanshi Sachdeva</div>
+  <div class="footer-role">Marketing, Strategy & AI · Delhi, India</div>
+  <div class="footer-contact">
+    <a href="mailto:Dsachdeva015@gmail.com">Dsachdeva015@gmail.com</a>
+    <span>+91-8791623345</span>
+    <span>MBA Finance & Marketing · Amity University · 2024–26</span>
+    <span>B.A. (Hons) English · Lady Shri Ram College, DU · CGPA 8.09</span>
+  </div>
+  <div class="footer-copy">Brand Narrative. Creator Ecosystems. Measurable Impact. ✦</div>
+</footer>
+
+</body>
+</html>
